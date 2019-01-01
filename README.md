@@ -1,5 +1,9 @@
 # Stepper
 
+## Example Image
+![Stepper](src/assets/stepper.png?raw=true "Title")
+
+
 ## Using the stepper
 
 
@@ -10,7 +14,7 @@
 	* To make the stepper clickable add clickable="true"
 
 	```
-	<stepper clickable="true" 
+	<stepper clickable="true">
 		
 	</stepper> 
 	```
