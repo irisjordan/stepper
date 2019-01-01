@@ -1,0 +1,72 @@
+<div>
+	<mat-card>
+		<h3>Clickable Stepper</h3><br>
+		
+		<stepper clickable="true" color="#E91E63" shape="tile"> 
+			<step title="Title 1" details="Details 1">Content 1</step>
+			<step title="Title 2" details="Details 2">Content 2</step> 
+			<step title="Title 3" details="Details 3">Content 3</step>
+			<step title="Title 4" details="Details 4">Content 4</step> 
+			<step title="Title 5" details="Details 5">Content 5</step>
+			<step title="Title 6" details="Details 6">Content 6</step> 
+		</stepper>
+
+	</mat-card>
+	
+	<br><br>
+    <mat-card>
+		<h3>Clickable Stepper with States and Actions</h3><br>
+		
+		<stepper #stepper1 clickable="true" color="#E91E63" shape="square"> 
+			<step title="Title 1" details="Details 1">Content 1</step>
+			<step title="Title 2" details="Details 2">Content 2</step> 
+			<step title="Title 3" details="Details 3"><button mat-raised-button>Content 3</button></step>
+			<step title="Title 4" details="State: Complete" state="complete">State: Complete</step> 
+			<step title="Title 5" details="State: Editable" state="edit"><button mat-raised-button>State: Editable</button></step>
+			<step title="Title 6" details="State: Error" state="error">State: Error</step> 
+		</stepper>
+
+	</mat-card>
+  
+	<br><br>
+	<button mat-raised-button color="primary" (click)="stepper1.previousStep()"> &lt; previous step  </button>
+	<button mat-raised-button color="primary" (click)="stepper1.nextStep()"> next step &gt; </button>
+	<br><br>
+	<button mat-raised-button (click)="stepper1.setState('complete')">Complete Active Step</button>
+	<button mat-raised-button (click)="stepper1.setState('complete');stepper1.nextStep()">Complete Active Step & Move To Next Step</button>
+
+	<br><br>
+	<button mat-raised-button (click)="stepper1.setState('edit')">Make Active Step Editable</button>
+	<button mat-raised-button (click)="stepper1.setState('error')">Set Active Step to Error</button>
+    <br><br><br><br>
+
+	<mat-card>
+		<h3>Non-Clickable Stepper</h3><br>
+		<stepper #stepper2 color="#E91E63" shape="circle"> 
+			<step title="Title 1" details="Details 1">Content 1</step>
+			<step title="Title 2" details="Details 2">Content 2</step> 
+			<step title="Title 3" details="Details 3"><button mat-raised-button>Content 3</button></step>
+			<step title="Title 4" details="State: Complete" state="complete">State: Complete</step> 
+			<step title="Title 5" details="State: Editable" state="edit"><button mat-raised-button>State: Editable</button></step>
+			<step title="Title 6" details="State: Error" state="error">State: Error</step> 
+		</stepper>
+	</mat-card>
+
+	<br><br>
+	<button mat-raised-button color="primary" (click)="stepper2.previousStep()"> &lt; previous step  </button>
+	<button mat-raised-button color="primary" (click)="stepper2.nextStep()"> next step &gt; </button>
+	<br><br>
+	<button mat-raised-button (click)="stepper2.setState('complete')">Complete Active Step</button>
+	<button mat-raised-button (click)="stepper2.setState('complete');stepper2.nextStep()">Complete Active Step & Move To Next Step</button>
+	<br><br>
+	<button mat-raised-button (click)="stepper2.setState('complete');stepper2.setClickable(true)">Complete Active Step & Make It Clickable</button>
+	<button mat-raised-button (click)="stepper2.setState('complete');stepper2.setClickable(true);stepper2.nextStep()">Complete Active Step & Make It Clickable & Move to next step</button>
+	<br><br>
+	<button mat-raised-button (click)="stepper2.setState('edit')">Make Active Step Editable</button>
+	<button mat-raised-button (click)="stepper2.setState('error')">Set Active Step to Error</button>
+	
+
+	<br><br>
+
+  
+</div>

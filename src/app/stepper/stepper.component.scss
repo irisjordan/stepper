@@ -1,0 +1,133 @@
+.stepper {
+    counter-reset: step;
+    margin: 0px;
+    overflow: hidden;
+    padding:0;
+
+    li {
+        float: left;
+        list-style-type: none;
+        padding: 22px 0;
+        position: relative;
+        text-align: center;
+
+        &.clickable {
+            cursor: pointer;
+        }
+        
+        &.clickable:hover {
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+
+        &:after {
+            background-color: #BDBDBD;
+            content: '';
+            height: 1px;
+            left: calc(50% + 25px);
+            position: absolute;
+            top: 36px;
+            width: calc(100% - 50px);
+        }
+
+        &:last-child:after {
+            content: none;
+        }
+
+    }
+
+    .step-shape {
+        border-radius: 50%;
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto 10px auto;
+        text-align: center;
+        width: 30px;
+    
+        &:before {
+            color: #fff;
+            content: counter(step);
+            counter-increment: step;
+            font-size: 14px;
+        }
+        
+        &.square {
+            border-radius: 2px;
+        }
+        
+        &.tile {
+            border-radius: 6px;
+        }
+    }
+    
+    li:not(.active):not(.complete):not(.error) .step-shape {
+        background-color: rgba(0, 0, 0, 0.38) !important;
+    }
+
+    li.complete .step-shape,
+    li.edit .step-shape,
+    li.error .step-shape {
+        font-feature-settings: 'liga';
+        -webkit-font-feature-settings: 'liga';
+    }
+
+    li.complete .step-shape:before {
+        content: 'check';
+        font-family: 'Material Icons';
+    }
+
+    li.edit .step-shape:before {
+        content: 'edit';
+        font-family: 'Material Icons';
+    }
+
+    li.error .step-shape {
+        background-color: transparent !important;
+    }
+
+    li.error .step-shape:before {
+        background-color: transparent;
+        color: #ff0000;
+        content: 'warning';
+        font-family: 'Material Icons';
+        font-size: 24px;
+        margin-top: 1px;
+    }
+
+    .step-title, .step-details {
+        padding: 0 16px;
+    }
+    
+    .step-title {
+        color: rgba(0, 0, 0, 0.38);
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 13px;
+    }
+    
+    .step-details {
+        color: rgba(0, 0, 0, 0.38);
+        font-size: 12px;
+    }
+    
+    li.active .step-title {
+        color: rgba(0, 0, 0, 0.87);
+    }
+    
+    li.active .step-details {
+        color: rgba(0, 0, 0, 0.54);
+    }
+    
+    li.active.error .step-title,
+    li.active.error .step-details {
+        color: #ff0000;
+    }
+    
+    li.error .step-title {
+        margin-top: 12px;
+    }
+}
+
+::ng-deep .step-content {
+    height: 40px;
+}

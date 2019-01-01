@@ -1,0 +1,8 @@
+<ul class="stepper">
+    <li *ngFor="let step of steps" (click)="step.clickable && selectStep(step)" class="{{step.stepStateClass}}" [class.active]="step.active" [class.clickable]="step.clickable" [ngStyle]="{'width': (100 / numberOfSteps) + '%'}">
+      <div class="step-shape {{shape}}" [ngStyle]="{'background-color': color}"></div>
+       <div class="step-title">{{step.title}}</div>
+      <div class="step-details">{{step.details}}</div>
+    </li>
+</ul>
+<ng-content></ng-content>
