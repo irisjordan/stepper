@@ -1,6 +1,6 @@
 <div>
 	<mat-card>
-		<h3>Clickable Stepper</h3><br>
+		<mat-card-title>Clickable Stepper</mat-card-title><br><br>
 		
 		<stepper clickable="true" color="#E91E63" shape="tile"> 
 			<step title="Title 1" details="Details 1">Content 1</step>
@@ -15,7 +15,7 @@
 	
 	<br><br>
     <mat-card>
-		<h3>Clickable Stepper with States and Actions</h3><br>
+		<mat-card-title>Clickable Stepper with States and Actions</mat-card-title><br><br>
 		
 		<stepper #stepper1 clickable="true" color="#E91E63" shape="square"> 
 			<step title="Title 1" details="Details 1">Content 1</step>
@@ -41,7 +41,7 @@
     <br><br><br><br>
 
 	<mat-card>
-		<h3>Non-Clickable Stepper</h3><br>
+		<mat-card-title>Non-Clickable Stepper</mat-card-title><br><br>
 		<stepper #stepper2 color="#E91E63" shape="circle"> 
 			<step title="Title 1" details="Details 1">Content 1</step>
 			<step title="Title 2" details="Details 2">Content 2</step> 
@@ -65,8 +65,4 @@
 	<button mat-raised-button (click)="stepper2.setState('edit')">Make Active Step Editable</button>
 	<button mat-raised-button (click)="stepper2.setState('error')">Set Active Step to Error</button>
 	
-
-	<br><br>
-
-  
 </div>
