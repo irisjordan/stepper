@@ -1,8 +1,13 @@
 # Stepper
 
+This is a stepper made in Angular 7.
+
 ## Example Image
 ![Stepper](src/assets/stepper.png?raw=true "Title")
 
+
+## See a running example
+http://irisj.io/stepper/
 
 ## Using the stepper
 
